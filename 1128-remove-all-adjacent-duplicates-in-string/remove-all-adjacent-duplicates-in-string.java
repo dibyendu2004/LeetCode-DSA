@@ -3,13 +3,8 @@ class Solution {
         Stack<Character> st = new Stack<>();
 
         for(char c:s.toCharArray()){
-            if(!st.isEmpty()){
-                if(st.peek() == c){
+            if(!st.isEmpty() && st.peek() == c){
                     st.pop();
-                }
-                else{
-                    st.push(c);
-                }
             }
             else{
                 st.push(c);
