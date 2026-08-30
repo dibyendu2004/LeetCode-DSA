@@ -1,6 +1,6 @@
 class Solution {
     public int minLength(String s) {
-        if(s.length() == 1) return s.length();
+        // if(s.length() == 1) return s.length();
         StringBuilder sb = new StringBuilder();
         for(char c:s.toCharArray()){
             int len = sb.length();
