@@ -5,7 +5,7 @@ class Solution {
 
         // return fib(n-1) + fib(n-2);
 
-        if(n==0) return 0;
+        if(n<=1) return n;
 
         int prev0 = 0;
         int prev1 = 1;
