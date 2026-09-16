@@ -10,31 +10,57 @@
  */
 class Solution {
     public ListNode reverseBetween(ListNode head, int left, int right) {
-        if(head == null) return head;
+        // if(head == null) return head;
 
-        ListNode curr = head;
-        ArrayList<Integer> list = new ArrayList<>();
-        while(curr!=null){
-            list.add(curr.val);
-            curr=curr.next;
+        // ListNode curr = head;
+        // ArrayList<Integer> list = new ArrayList<>();
+        // while(curr!=null){
+        //     list.add(curr.val);
+        //     curr=curr.next;
+        // }
+
+        // int i = left-1;
+        // int j = right-1;
+
+        // while(i<j){
+        //     int temp = list.get(i);
+        //     list.set(i,list.get(j));
+        //     list.set(j,temp);
+        //     i++;j--;
+        // }
+
+        // curr = head;
+        // int index = 0;
+        // while(curr != null){
+        //     curr.val = list.get(index++);
+        //     curr = curr.next;
+        // } 
+        // return head;
+
+        if(left==right) return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode prevLeft = dummy;
+
+        for(int i=1;i<left;i++){
+            prevLeft = prevLeft.next;
         }
 
-        int i = left-1;
-        int j = right-1;
+        ListNode curr = prevLeft.next;
+        ListNode prev = null;
 
-        while(i<j){
-            int temp = list.get(i);
-            list.set(i,list.get(j));
-            list.set(j,temp);
-            i++;j--;
+        for(int i=0;i<=right-left;i++){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
 
-        curr = head;
-        int index = 0;
-        while(curr != null){
-            curr.val = list.get(index++);
-            curr = curr.next;
-        } 
-        return head;
+        ListNode leftNode = prevLeft.next;
+        prevLeft.next = prev;
+        leftNode.next = curr;
+        
+        return dummy.next;
     }
 }
