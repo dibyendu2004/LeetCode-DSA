@@ -37,7 +37,7 @@ class Solution {
             ListNode next1 = temp1.next;
             ListNode next2 = temp2.next;
             temp1.next = temp2;
-            temp2.next = next1;
+            temp1.next.next = next1; //temp2.next = next1;
             temp1 = next1;
             temp2 = next2;
             
