@@ -26,8 +26,10 @@ class Solution {
             }
             temp = temp.next;
         }
-        dummy1.next = list2.next;
+        
         dummy2.next=null;
+        dummy1.next = list2.next;
+        
 
         return list1.next;
     }
