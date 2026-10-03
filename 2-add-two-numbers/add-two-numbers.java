@@ -10,6 +10,9 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        //--------with Space---------
+
         // List<Integer> list1 = new ArrayList<>();
         // List<Integer> list2 = new ArrayList<>();
 
@@ -49,6 +52,9 @@ class Solution {
         // }
         // return dummy.next;
 
+        
+
+        //-------without any extra space------
         
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
