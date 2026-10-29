@@ -9,12 +9,13 @@ class Solution {
                 count5++;
             }
             if(bills[i] == 10){
-                if(count5 == 0){
-                   return false;
-                }
-                else{
+                if(count5 > 0){
                     count5--;
                     count10++;
+                   
+                }
+                else{
+                   return false; 
                 }
             }
              if(bills[i] == 20){
