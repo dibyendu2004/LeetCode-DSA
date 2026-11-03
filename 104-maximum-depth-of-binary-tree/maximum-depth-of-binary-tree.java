@@ -23,14 +23,12 @@ class Solution {
         // return Math.max(leftDepth,rightDepth)+1;
 
         Queue<TreeNode> q = new LinkedList<>();
-        int height = 0;
+        int depth = 0;
         q.offer(root);
         while(!q.isEmpty()){
             int size = q.size();
             for(int i=0;i<size;i++){
                 TreeNode node = q.poll();
-
-                // if(node.left==null && node.right==null) return height;
 
                 if(node.left != null){
                     q.offer(node.left);
@@ -40,8 +38,8 @@ class Solution {
                     q.offer(node.right);
                 }
             }
-            height++;
+            depth++;
         }
-        return height;
+        return depth;
     }
 }
